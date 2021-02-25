@@ -22,6 +22,7 @@ pipeline {
             }
         }
         stage('Email Notification'){
+            echo 'test by sk'
             mail bcc: '', body: '''Build successful!!!
             Thanks,
             Salim''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'salim.khan.wk@gmail.com'
