@@ -21,15 +21,15 @@ pipeline {
                 }
             }
         }
+        stage('Email Notification'){
+            mail bcc: '', body: '''Build successful!!!
+            Thanks,
+            Salim''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'salim.khan.wk@gmail.com'
+            }        
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
-        stage('Email Notification'){
-            mail bcc: '', body: '''Build successful!!!
-            Thanks,
-            Salim''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'salim.khan.wk@gmail.com'
-            }
     }
 }
